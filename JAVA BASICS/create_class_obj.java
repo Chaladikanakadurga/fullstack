@@ -9,7 +9,7 @@ class CRTP extends Sviet
 {
    void learn()
    {
-     System.out.println("Are you Ready to learn My Dear students");
+     System.out.println("Knowledge");
    }
 }
 class College
