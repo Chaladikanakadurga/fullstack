@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MINISO FOR CUTIES</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #000000;
+      background: #ed92ca;
+    }
+    img { max-width: 100%; display: block; }
+
+    header {
+      background: rgba(204, 58, 160, 0.9);
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: #666;
+    }
+
+    section {
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #eee;
+      padding: 1rem;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    footer {
+      background: rgba(255, 255, 255, 0.9);
+      border-top: 1px solid #eee;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      .nav-container { flex-direction: column; }
+      nav a { margin: .5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo"><img src="data:image/png;base64,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" alt="Miniso logo" style="height:150px;"></div>
+      <nav>
+        <a href="#">Brand</a>
+        <a href="#">Product</a>
+        <a href="#">Stores</a>
+        <a href="#">Investors</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>MINISO FOR CUTIES</h1>
+    <p>Barbie Collection's</p>
+  </div>
+
+  <section>
+    <h2>IP Collaborations</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipMtR7JZco6llI1GwJg9EDB2Wh7kLtOQM6yv4tcB=s1360-w1360-h1020-rw" alt="Barbie">
+        <h3>Barbie</h3>
+      </div>
+      <div class="card">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipO91hMm2dwVQM_WnLYViEzRyA7PbxTVCQ36nklK=s1360-w1360-h1020-rw" alt="SoftToys">
+        <h3>SoftToys</h3>
+      </div>
+      <div class="card">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipNYFxP68LrDXFwa1Czbg1xQQjxjUZTwIOkK19o1=s1360-w1360-h1020-rw" alt="KeyChain">
+        <h3>KeyChain</h3>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFo3cBYIi3A5uWLc8hLPFogvmCGH0M-j4eVQ&s" alt="Bags">
+        <h3>Bags</h3>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>skin Products</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://preview.redd.it/miniso-perfumes-affordable-elegance-v0-x8zucgng264e1.jpeg?width=1080&crop=smart&auto=webp&s=7e6a0fc08739c61617eb2a9f1b23f42692e66e05" alt="facewashes">
+        <h3>facewashes</h3>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2CN4yMttfjNgNHFAD8AUSNPTSWGNW3AMHyfn_AobxOELeMTwYxT2qbkIhfBeZ6G4vrLI&usqp=CAU" alt="Perfumes">
+        <h3>Perfumes</h3>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 MINISO CO.LTD.INDIA
+  </footer>
+
+</body>
+</html>
